@@ -1,0 +1,212 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
+  "minima/initialize";
+//@import 'resources';
+
+  // team.md
+  
+  .member-card {
+    text-align: center;
+    margin: 20px;
+  
+  }
+
+  .member-card h3 a {
+    color: inherit; /* Match the parent text color */
+    text-decoration: none; /* Remove underline */
+  }
+
+  .member-card h3 a:hover {
+    text-decoration: underline; /* Underline only on hover */
+  }
+
+  .member-card p a {
+    color: inherit;  /* Make sure mailto links inherit color */
+    text-decoration: none;  /* Remove underline for email links */
+  }
+
+  .member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .faculty-advisers, .core-members, .volunteers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  // index.md
+/* General Container Styling */
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Individual Event Card */
+.event-card {
+  max-width: 320px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Event Content */
+.event-content {
+  padding: 16px;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.event-description {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Event Details */
+.event-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.event-detail {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.event-label {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.event-value {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+/* Event Link */
+.event-link {
+  padding: 16px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.event-link a {
+  font-size: 0.875rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.event-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .events-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-card {
+    width: 100%;
+    max-width: 95%;
+  }
+}
+
+//resources.md
+
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduced spacing between cards */
+  justify-content: space-between; /* Aligns cards evenly */
+  margin: 10px auto;
+}
+
+.video-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 32%; /* Adjusted width for three cards per row */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.video-title {
+  padding: 8px; /* Further reduced padding */
+  font-size: 1rem;
+  font-weight: normal; /* Regular font weight */
+  color: #333;
+  text-align: center;
+  background-color: #fff;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Increased embed height */
+  background-color: #000; /* Placeholder if video fails to load */
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .video-card {
+    width: 48%; /* Two cards per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    flex-direction: column; /* Stack cards vertically for small screens */
+    align-items: center;
+  }
+
+  .video-card {
+    width: 95%; /* Full width for smaller screens */
+  }
+
+  .video-embed {
+    height: 300px; /* Slightly smaller embed height on small screens */
+  }
+}
+
+
+
